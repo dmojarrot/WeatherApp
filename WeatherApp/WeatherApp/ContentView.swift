@@ -56,7 +56,7 @@ struct Home: View{
             if data.cityInfo.count == 0{
                 isCityEmpty = true
             }else{
-                weather = String( data.cityInfo[0].main.temp)
+                weather = String(data.cityInfo[0].main.temp)
                 
             }
         }

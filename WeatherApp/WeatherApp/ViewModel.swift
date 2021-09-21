@@ -14,25 +14,26 @@ class ViewModel: ObservableObject{
         cityInfo.removeAll()
         
         let cityNameSPaces = city.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)
-                
+        
         let APIKey = "237211e02d4369ba0b9bc89be88da973"
-        let url = URL(string: "api.openweathermap.org/data/2.5/weather?q=\(cityNameSPaces ?? "London")&units=metric&appid=\(APIKey)")!
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?q=\(cityNameSPaces ?? "London")&units=metric&appid=\(APIKey)")!
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-        
         URLSession.shared.dataTask(with: request) {(data, response, error) in
             do{
                 if let JSONData = data{
                     print("JSONSize: \(JSONData)")
                     
-                    let decodedData = try JSONDecoder().decode(Results.self, from: JSONData)
+                    let decodedData = try JSONDecoder().decode(Data.self, from: JSONData)
                     
                     print("DecodedJSON: \(decodedData)")
                     
                     DispatchQueue.main.async {
-                        self.cityInfo.append(contentsOf: decodedData.results)
+                        self.cityInfo.append(contentsOf: [decodedData])
+
                     }
+                    
                 }else{
                     print("Null JSON")
                 }
@@ -41,5 +42,5 @@ class ViewModel: ObservableObject{
             }
         }.resume()
     }
-
+    
 }

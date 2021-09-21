@@ -7,52 +7,59 @@
 
 import Foundation
 
-struct Results: Codable{
-    var results:[Data]
+
+struct Data: Codable{
+    var coord: Coord
+    var weather: [Weather]
+    var base: String
+    var main: Main
+    var visibility: Int
+    var wind: Wind
+    var clouds: Clouds
+    var dt: Int
+    var sys: Sys
+    var timezone: Int
+    var id: Int
+    var name: String
+    var cod: Int
 }
 
-
-struct Data: Codable {
-    let coord: Coord
-    let weather: [Weather]
-    let base: String
-    let main: Main
-    let visibility: Int
-    let wind: Wind
-    let clouds: Clouds
-    let dt: Int
-    let sys: Sys
-    let timezone, id: Int
-    let name: String
-    let cod: Int
+struct Coord: Codable{
+    var lon: Float
+    var lat: Float
 }
 
-struct Clouds: Codable {
-    let all: Int
+struct Weather: Codable{
+    var id: Int
+    var main: String
+    var description: String
+    var icon: String
 }
 
-struct Coord: Codable {
-    let lon, lat: Double
-}
-
-struct Main: Codable {
-    let temp, feelsLike, tempMin, tempMax: Double
-    let pressure, humidity: Int
-}
-
-struct Sys: Codable {
-    let type, id: Int
-    let country: String
-    let sunrise, sunset: Int
-}
-
-struct Weather: Codable {
-    let id: Int
-    let main, weatherDescription, icon: String
+struct Main: Codable{
+    var temp: Float
+    var feels_like: Float
+    var temp_min: Float
+    var temp_max: Float
+    var pressure: Int
+    var humidity: Int
 }
 
 struct Wind: Codable {
-    let speed: Double
-    let deg: Int
+    var speed: Float
+    var deg: Int
 }
+
+struct Clouds: Codable {
+    var all: Int
+}
+
+struct Sys: Codable{
+    var type: Int
+    var id: Int
+    var country: String
+    var sunrise: Int
+    var sunset: Int
+}
+
 
