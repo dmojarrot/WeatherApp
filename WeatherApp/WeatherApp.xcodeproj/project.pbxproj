@@ -11,6 +11,8 @@
 		3B12190726F954D3004AEA22 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B12190626F954D3004AEA22 /* ContentView.swift */; };
 		3B12190926F954D5004AEA22 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B12190826F954D5004AEA22 /* Assets.xcassets */; };
 		3B12190C26F954D5004AEA22 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3B12190B26F954D5004AEA22 /* Preview Assets.xcassets */; };
+		3B1FBC6326F9651C00636127 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1FBC6226F9651C00636127 /* Model.swift */; };
+		3B1FBC6526F9662300636127 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B1FBC6426F9662300636127 /* ViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +22,8 @@
 		3B12190826F954D5004AEA22 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3B12190B26F954D5004AEA22 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3B12190D26F954D5004AEA22 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3B1FBC6226F9651C00636127 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		3B1FBC6426F9662300636127 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,8 @@
 			children = (
 				3B12190426F954D3004AEA22 /* WeatherAppApp.swift */,
 				3B12190626F954D3004AEA22 /* ContentView.swift */,
+				3B1FBC6226F9651C00636127 /* Model.swift */,
+				3B1FBC6426F9662300636127 /* ViewModel.swift */,
 				3B12190826F954D5004AEA22 /* Assets.xcassets */,
 				3B12190D26F954D5004AEA22 /* Info.plist */,
 				3B12190A26F954D5004AEA22 /* Preview Content */,
@@ -138,7 +144,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3B1FBC6326F9651C00636127 /* Model.swift in Sources */,
 				3B12190726F954D3004AEA22 /* ContentView.swift in Sources */,
+				3B1FBC6526F9662300636127 /* ViewModel.swift in Sources */,
 				3B12190526F954D3004AEA22 /* WeatherAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
