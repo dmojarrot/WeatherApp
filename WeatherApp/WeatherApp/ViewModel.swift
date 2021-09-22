@@ -42,5 +42,36 @@ class ViewModel: ObservableObject{
             }
         }.resume()
     }
+    func searchLatLon(lat: String, lon: String){
+        cityInfo.removeAll()
+                
+        let APIKey = "237211e02d4369ba0b9bc89be88da973"
+        let url = URL(string: "https://api.openweathermap.org/data/2.5/weather?lat=\(lat)&lon=\(lon)&units=metric&appid=\(APIKey)")!
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with: request) {(data, response, error) in
+            do{
+                if let JSONData = data{
+                    print("JSONSize: \(JSONData)")
+                    
+                    let decodedData = try JSONDecoder().decode(Data.self, from: JSONData)
+                    
+                    print("DecodedJSON: \(decodedData)")
+                    
+                    DispatchQueue.main.async {
+                        self.cityInfo.append(contentsOf: [decodedData])
+
+                    }
+                    
+                }else{
+                    print("Null JSON")
+                }
+            }catch{
+                print("error \(error)")
+            }
+        }.resume()
+    }
+
     
 }
